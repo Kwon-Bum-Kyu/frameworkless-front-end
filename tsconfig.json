@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // JavaScript 버전
+    "module": "ESNext", // ES 모듈 형식
+    "moduleResolution": "Node", // Node.js 스타일 모듈 해석
+    "outDir": "./dist", // 빌드 결과물 저장 경로
+    "rootDir": "./src", // 소스 파일 기준 경로
+    "strict": true, // 엄격한 타입 검사
+    "esModuleInterop": true, // ES 모듈과 CommonJS 간 호환성
+    "resolveJsonModule": true, // JSON 모듈 로드 지원
+    "forceConsistentCasingInFileNames": true, // 대소문자 파일 이름 일관성
+    "allowJs": true, // JS 파일 빌드 허용
+    "noImplicitAny": false // 암시적 any 허용 (필요시)
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
