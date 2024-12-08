@@ -2,11 +2,8 @@ const getTodoCount = (todos: INITIAL_STATE["todos"]) => {
   const notCompleted = todos.filter((todo) => !todo.completed);
 
   const { length } = notCompleted;
-  if (length === 1) {
-    return "1 Item left";
-  }
 
-  return `${length} Items left`;
+  return `${length} ${length > 1 ? "Items" : "Item"} left`;
 };
 
 export default (

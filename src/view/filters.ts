@@ -19,7 +19,6 @@ export default (
     anchor.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // textContent가 null인 경우 기본값 처리
       const filter = anchor.textContent as
         | "All"
         | "Active"

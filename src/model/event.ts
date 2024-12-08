@@ -8,10 +8,8 @@ export const EVENT_TYPES = Object.freeze({
   FILTER_CHANGED: "FILTER_CHANGED",
 } as const);
 
-// EventType 타입 정의
 export type EventType = keyof typeof EVENT_TYPES;
 
-// EventMap 정의
 export interface EventMap {
   ITEM_ADDED: string;
   ITEM_UPDATED: { text: string; index: number };
@@ -22,7 +20,6 @@ export interface EventMap {
   FILTER_CHANGED: "All" | "Active" | "Completed";
 }
 
-// Event 타입 정의
 export type Event<K extends EventType = EventType> = {
   type: K;
   payload: EventMap[K];

@@ -1,22 +1,11 @@
 import eventCreators from "../model/eventCreators.js";
+import { getTemplate } from "../util/common.js";
 type EventCreatorReturnType =
   | ReturnType<typeof eventCreators.deleteItem>
   | ReturnType<typeof eventCreators.toggleItemCompleted>
   | ReturnType<typeof eventCreators.updateItem>;
 
 type EventType = (event: EventCreatorReturnType) => void;
-
-let template: HTMLTemplateElement | null = null;
-
-const createNewTodoNode = (): HTMLElement => {
-  if (!template) {
-    template = document.getElementById("todo-item") as HTMLTemplateElement;
-    if (!template) {
-      throw new Error("Template with id 'todo-item' not found.");
-    }
-  }
-  return template.content.firstElementChild!.cloneNode(true) as HTMLElement;
-};
 
 const attachEventsToTodoElement = (
   element: HTMLElement,
@@ -60,7 +49,7 @@ const getTodoElement = (
 ) => {
   const { text, completed } = todo;
 
-  const element = createNewTodoNode();
+  const element = getTemplate("todo-item");
   const editInput = element.querySelector("input.edit") as HTMLInputElement;
   const label = element.querySelector("label") as HTMLLabelElement;
   const toggleInput = element.querySelector("input.toggle") as HTMLInputElement;

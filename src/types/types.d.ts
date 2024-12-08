@@ -3,6 +3,4 @@ interface INITIAL_STATE {
   currentFilter: "All" | "Active" | "Completed";
 }
 
-type ElementWithValue = HTMLInputElement;
-
 type registryName = "app" | "todos" | "todosView" | "counter" | "filters";
